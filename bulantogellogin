@@ -1,0 +1,245 @@
+<!doctype html>
+<html amp lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+    <title>Gambar dan Animasi Cube</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        }
+
+        @-webkit-keyframes -amp-start {
+            from { visibility: hidden; }
+            to { visibility: visible; }
+        }
+
+        @keyframes -amp-start {
+            from { visibility: hidden; }
+            to { visibility: visible; }
+        }
+    </style>
+    <style amp-custom>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: bold;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #000000 0%, #0b0b0b 100%);
+        }
+
+        .header {
+            margin-bottom: 50px;
+            position: relative;
+            padding: 10px;
+            background-image: url('https://fast.image.delivery/dqeuttl.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Menambahkan margin-bottom untuk logo agar sedikit naik dari kubus */
+        img[alt="Logo Bulantogel"] {
+            margin-bottom: 50px; /* Mengatur jarak logo dari kubus */
+        }
+
+        .logo-background {
+            position: absolute;
+            width: 220px;
+            height: 80px;
+            background-color: #050303;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px 0 20px 0;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+            margin-bottom: 40px;
+        }
+
+        .cube-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spin 20s infinite linear;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            transform: rotateY(0deg) translateZ(100px);
+            background-image: url('https://fast.image.delivery/mzcqpfm.jpg');
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(100px);
+            background-image: url('https://fast.image.delivery/mzcqpfm.jpg');
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(100px);
+            background-image: url('https://fast.image.delivery/mzcqpfm.jpg');
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(100px);
+            background-image: url('https://fast.image.delivery/mzcqpfm.jpg');
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(100px);
+            background-image: url('https://fast.image.delivery/mzcqpfm.jpg');
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+            background-image: url('https://fast.image.delivery/mzcqpfm.jpg');
+        }
+
+        @keyframes spin {
+            from { transform: rotateX(0deg) rotateY(0deg); }
+            to { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        .body-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .body-button {
+            background: linear-gradient(45deg, #FFD700, #FFCC00);
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .body-button:hover,
+        .body-button:focus {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+            background: linear-gradient(45deg, #FFCC00, #FFD700);
+        }
+
+        .body-button:active {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+        }
+
+        footer {
+            color: #bdc1c6;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 9px;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            70% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .body-button {
+            animation: bounce 1s ease infinite;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo Image -->
+    <img src="https://imgpost.store/imagesbt/bulantogel.gif" alt="Logo Bulantogel">
+
+    <div class="cube">
+        <div class="cube-container">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+        </div>
+    </div>
+
+    <div class="body-buttons">
+        <a href="https://bulanprofile.com/" class="body-button" target="_blank" rel="noopener noreferrer nofollow">DAFTAR</a>
+        <a href="https://bulanprofile.com/" class="body-button" target="_blank" rel="noopener noreferrer nofollow">LOGIN</a>
+    </div>
+
+    <footer>
+        @2024 <a href="https://example.com"> 🔥 🔥 BURUAN BERMAIN DI SITUSNYA BULANTOGEL YANG TERGACORR 🔥 🔥 </a> | AMAN TERPECAYA
+    </footer>
+
+    <!-- GIF Banner -->
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhERsNTzOcO2bH7iZ7DFTATqy1wU5W-C35j63-uVYFQ0vgaLYOIjcSoGINQyku4lhvzV9X22y62UYq_EeUT6Df4xW08wHmRLUSKey0Mt4pd75pDcTPWQCfZjVK082_ZhDPUaV5WC6t0b5YrrpXnGZoUk26WJ7krrUt14zAX2Ek4KFsEsRb9zP6emN6vkd2P/s728/banner%20baru%20bulan.gif" alt="GIF Banner" class="promo-gif">
+
+</body>
+</html>
